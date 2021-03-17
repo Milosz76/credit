@@ -1,25 +1,13 @@
-package pl.credit.suite.mvc.model.entity;
+package pl.credit.suite.mvc.model.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Size;
-import javax.persistence.*;
+public class CustomerDTO {
 
-@Entity
-public class Customer {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int creditId;
     private String firstName;
     private String surname;
-    @Size(max = 11, message = "PESEL must contain 11 digits!")
     private String pesel;
-
-    public Customer() {
-    }
+    private CreditDTO creditDTO;
+    private ProductDTO productDTO;
 
     public int getCreditId() {
         return creditId;
@@ -51,5 +39,21 @@ public class Customer {
 
     public void setPesel(String pesel) {
         this.pesel = pesel;
+    }
+
+    public CreditDTO getCreditDTO() {
+        return creditDTO;
+    }
+
+    public void setCreditDTO(CreditDTO creditDTO) {
+        this.creditDTO = creditDTO;
+    }
+
+    public ProductDTO getProductDTO() {
+        return productDTO;
+    }
+
+    public void setProductDTO(ProductDTO productDTO) {
+        this.productDTO = productDTO;
     }
 }

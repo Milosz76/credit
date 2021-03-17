@@ -1,18 +1,12 @@
-package pl.credit.suite.mvc.model.entity;
+package pl.credit.suite.mvc.model.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class ProductDTO {
 
-@Entity
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int creditId;
     private String productName;
     private int value;
+    private CreditDTO creditDTO;
+    private CustomerDTO customerDTO;
 
     public int getCreditId() {
         return creditId;
@@ -36,5 +30,21 @@ public class Product {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public CreditDTO getCreditDTO() {
+        return creditDTO;
+    }
+
+    public void setCreditDTO(CreditDTO creditDTO) {
+        this.creditDTO = creditDTO;
+    }
+
+    public CustomerDTO getCustomerDTO() {
+        return customerDTO;
+    }
+
+    public void setCustomerDTO(CustomerDTO customerDTO) {
+        this.customerDTO = customerDTO;
     }
 }

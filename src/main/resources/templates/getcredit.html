@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GetCredit</title>
+</head>
+<body>
+<h2>Credit form:</h2>
+<form  th:action="@{/getcredit}"  th:object="getCreditModel" method="post">
+    <table>
+        <tr>
+            <td><label><b>First Name:</b></label></td>
+            <td><input type="text" th:field="*{firstName}" /></td>
+        </tr>
+        <tr>
+            <td><label><b>Surname:</b></label></td>
+            <td><input type="text" th:field="*{surname}"/></td>
+        </tr>
+        <tr>
+            <td><label><b>PESEL:</b></label></td>
+            <td><input type="text" th:field="*{pesel}"/></td>
+        </tr>
+        <tr>
+            <td><label><b>Product:</b></label></td>
+            <td><input type="text" th:field="*{productDTO.productName}" /></td>
+        </tr>
+        <tr>
+            <td><label><b>Value:</b></label></td>
+            <td><input type="text" th:field="*{productDTO.value}"/></td>
+        </tr>
+        <tr>
+            <td><label><b>Credit Name:</b></label></td>
+            <td><input type="text" th:field="*{creditDTO.creditName}" /></td>
+        </tr>
+    </table>
+</form>
+<table>
+    <tr>
+        <td><input type="submit" value="Submit"/> </td>
+        <td><input type="reset" value="Reset"/> </td>
+    </tr>
+</table>
+</form>
+<div>
+    <form th:action="@{/index}">
+        <button type="submit">Back</button>
+    </form>
+</div>
+</body>
+</html>
